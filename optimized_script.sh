@@ -48,9 +48,7 @@ done < /tmp/dates_opt.txt > /tmp/processed_opt.txt
 # Optimization 6: Single pass with awk or single grep with multiple patterns
 # Read file once instead of three times
 echo "Example 6: Single pass filtering"
-awk '/Jan/ {print > "/tmp/jan_opt.txt"} 
-     /Feb/ {print > "/tmp/feb_opt.txt"} 
-     /Mar/ {print > "/tmp/mar_opt.txt"}' /tmp/dates_opt.txt
+awk '/Jan/ {print > "/tmp/jan_opt.txt"} /Feb/ {print > "/tmp/feb_opt.txt"} /Mar/ {print > "/tmp/mar_opt.txt"}' /tmp/dates_opt.txt
 
 # Optimization 7: Use arrays properly
 # Glob directly into array instead of ls

@@ -2,6 +2,7 @@
 """
 Optimized versions of the inefficient code examples
 """
+from collections import deque
 import time
 
 
@@ -19,12 +20,14 @@ def optimized_list_search(items, target):
     Significant speedup for large datasets
     """
     found_items = set()
+    result = []
     for item in items:
         if item in found_items:
             continue
+        found_items.add(item)
         if item == target:
-            found_items.add(item)
-    return list(found_items)
+            result.append(item)
+    return result
 
 
 def optimized_nested_loops(data):
@@ -51,9 +54,13 @@ def optimized_file_operations():
 def optimized_dictionary_access(data_dict):
     """
     Optimization: Iterate over items() directly
-    Single lookup instead of multiple
+    Single lookup instead of multiple - when iterating keys that exist in dict,
+    the checks are redundant so we can just access values directly
     """
-    return list(data_dict.values())
+    result = []
+    for key in data_dict:
+        result.append(data_dict[key])
+    return result
 
 
 def optimized_list_operations():
@@ -61,7 +68,6 @@ def optimized_list_operations():
     Optimization: Use deque or reverse the list once
     appendleft() on deque is O(1), or build list and reverse once
     """
-    from collections import deque
     result = deque()
     for i in range(1000):
         result.appendleft(i)
