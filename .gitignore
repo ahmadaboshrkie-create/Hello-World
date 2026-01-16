@@ -1,0 +1,42 @@
+# Swap files
+*.swp
+*.swo
+*.swn
+.*.swp
+.*.swo
+.*.swn
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+/tmp/
+*.tmp
+*.log
+
+# Build artifacts
+*.o
+*.out
+*.exe
+a.out
